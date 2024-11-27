@@ -13,7 +13,7 @@ const emit = defineEmits<{
   (e: "select", folder: number): void;
 }>();
 
-const selectFolder = ref<number>();
+const selectFolder = ref<number>(0);
 
 const chooseFolder = (folder: number) => {
   selectFolder.value = folder;
@@ -71,25 +71,5 @@ const chooseFolder = (folder: number) => {
 .button-container {
   display: flex;
   justify-content: space-between;
-}
-
-.details {
-  padding-left: 15px;
-}
-
-.details p:hover,
-.folder-container summary:hover {
-  cursor: pointer;
-}
-/*
-.folder-container p:focus,
-.folder-container summary:focus {
-  color: red;
-}
-*/
-
-.choose-folder {
-  font-weight: bolder;
-  color: blue;
 }
 </style>
