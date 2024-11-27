@@ -1,6 +1,6 @@
 # folder-tree
 
-This template should help get you started developing with Vue 3 in Vite.
+A small project implementing the functionality of a modal window with a folder tree.
 
 ## Recommended IDE Setup
 
