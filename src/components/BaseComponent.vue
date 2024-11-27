@@ -8,9 +8,9 @@ const openModal = () => (isOpenModal.value = true);
 const closeModal = () => (isOpenModal.value = false);
 const selectFolder = ref<string | null>();
 
-const select = (folder: string) => {
+const select = (folder: number) => {
   closeModal();
-  selectFolder.value = folder;
+  selectFolder.value = `Выбранная папка ID: ${folder}`;
 };
 </script>
 
@@ -25,5 +25,3 @@ const select = (folder: string) => {
     @close="closeModal"
   />
 </template>
-
-<style scoped></style>

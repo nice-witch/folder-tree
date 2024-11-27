@@ -10,13 +10,13 @@ const props = defineProps<Props>();
 
 const emit = defineEmits<{
   (e: "close"): void;
-  (e: "select", folder: string): void;
+  (e: "select", folder: number): void;
 }>();
 
-const selectFolder = ref<string | null>();
+const selectFolder = ref<number>();
 
 const chooseFolder = (folder: number) => {
-  selectFolder.value = `Выбранная папка ID: ${folder}`;
+  selectFolder.value = folder;
 };
 </script>
 
@@ -32,7 +32,12 @@ const chooseFolder = (folder: number) => {
           />
         </div>
         <div class="button-container">
-          <button @click="$emit('select', selectFolder)">Ок</button>
+          <button
+            :disabled="!selectFolder"
+            @click="$emit('select', selectFolder)"
+          >
+            Ок
+          </button>
           <button @click="$emit('close')">Закрыть</button>
         </div>
       </div>
